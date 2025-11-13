@@ -537,3 +537,30 @@ window.GTMInsights = {
     getAllStudies,
     debugApp
 };
+
+/* ---------------------------------------------
+   SIDEBAR AUTO-HIGHLIGHT (por sección visible)
+--------------------------------------------- */
+
+function setupAutoHighlight(studyPrefix) {
+    const sections = document.querySelectorAll(`[id^="${studyPrefix}-"]`);
+    const sidebarItems = document.querySelectorAll(`#sidebar-${studyPrefix} li`);
+
+    window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach(sec => {
+            const top = sec.getBoundingClientRect().top;
+            if (top >= -150 && top <= 200) {
+                current = sec.id;
+            }
+        });
+
+        sidebarItems.forEach(li => {
+            li.classList.remove("sidebar-active");
+            if (li.getAttribute("onclick").includes(current)) {
+                li.classList.add("sidebar-active");
+            }
+        });
+    });
+}
