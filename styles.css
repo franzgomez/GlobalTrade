@@ -230,3 +230,68 @@ table tbody tr:nth-child(even) {
         margin-bottom: 12px;
     }
 }
+/* ---------------------------------------------
+   SIDEBAR – Menú lateral flotante por estudio
+--------------------------------------------- */
+
+.study-sidebar {
+    position: fixed;
+    left: 20px;
+    top: 140px;
+    width: 200px;
+    background: white;
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    z-index: 999;
+    max-height: 75vh;
+    overflow-y: auto;
+}
+
+.study-sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.study-sidebar li {
+    padding: 10px 5px;
+    margin-bottom: 6px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: 0.2s;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.study-sidebar li:hover {
+    background: var(--secondary);
+    color: white;
+}
+
+/* Activo */
+.sidebar-active {
+    background: var(--primary);
+    color: white !important;
+}
+
+/* MOBILE – Botón flotante */
+@media(max-width: 992px) {
+    .study-sidebar {
+        display: none;
+    }
+
+    .sidebar-button {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: var(--secondary);
+        padding: 15px 22px;
+        color: white;
+        border-radius: var(--radius);
+        font-size: 16px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        z-index: 9999;
+    }
+}
