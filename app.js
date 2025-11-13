@@ -122,6 +122,10 @@ function navigateToSection(sectionId) {
         behavior: 'smooth'
     });
 }
+// activar sidebar dinámico
+if(sectionId === "lurisia") setupAutoHighlight("lurisia");
+if(sectionId === "meltz") setupAutoHighlight("meltz");
+if(sectionId === "augusta") setupAutoHighlight("augusta");
 
 // Mostrar/ocultar secciones
 function hideAllSections() {
