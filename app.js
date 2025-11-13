@@ -116,22 +116,16 @@ function navigateToSection(sectionId) {
     currentSubsection = null;
     updateNavigation();
 
-    // activar sidebar dinámico al entrar a cada estudio
+    // activar sidebar dinámico cuando entras a un estudio
     if (sectionId === "lurisia") setupAutoHighlight("lurisia");
     if (sectionId === "meltz") setupAutoHighlight("meltz");
     if (sectionId === "augusta") setupAutoHighlight("augusta");
 
-    // scroll a la parte superior
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
     });
 }
-// activar sidebar dinámico
-if(sectionId === "lurisia") setupAutoHighlight("lurisia");
-if(sectionId === "meltz") setupAutoHighlight("meltz");
-if(sectionId === "augusta") setupAutoHighlight("augusta");
-
 // Mostrar/ocultar secciones
 function hideAllSections() {
     const sections = document.querySelectorAll('.section');
