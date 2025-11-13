@@ -115,8 +115,13 @@ function navigateToSection(sectionId) {
     currentSection = sectionId;
     currentSubsection = null;
     updateNavigation();
-    
-    // Scroll to top
+
+    // activar sidebar dinámico al entrar a cada estudio
+    if (sectionId === "lurisia") setupAutoHighlight("lurisia");
+    if (sectionId === "meltz") setupAutoHighlight("meltz");
+    if (sectionId === "augusta") setupAutoHighlight("augusta");
+
+    // scroll a la parte superior
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
