@@ -168,6 +168,17 @@ function scrollToSubsection(subsectionId) {
 
 // Configuración de navegación de estudios
 function setupStudyNavigation() {
+
+   // Comparativo
+const compButtons = document.querySelectorAll('#comparativo-nav button');
+compButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const targetId = button.getAttribute('onclick').match(/scrollToSubsection\('([^']+)'\)/);
+        if (targetId) {
+            scrollToSubsection(targetId[1]);
+        }
+    });
+}); 
     // Lurisia
     const lurisiaButtons = document.querySelectorAll('#lurisia-nav button');
     lurisiaButtons.forEach(button => {
